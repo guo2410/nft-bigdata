@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tj.bigdata.analysis.mapper.ContractTransactionMapper">
+
+<!--    <insert id="insertContract">-->
+<!--        insert into ${tableName} values-->
+<!--        <foreach collection="contractTransactionList" item="tx" separator=",">-->
+<!--            (-->
+<!--            #(tx.hash),#(tx.blockNumber),#(tx.from),#(tx.to),#(tx.input),#(tx.status),#(tx.value),#(tx.timestamp),#(tx.transactionIndex),#{tx.nonce}-->
+<!--            )-->
+<!--        </foreach>-->
+<!--    </insert>-->
+</mapper>

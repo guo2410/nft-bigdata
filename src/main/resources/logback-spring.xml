@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_PATH" value="/var/log/syncBlock"/>
+<!--    <property name="LOG_PATH" value="D:/loginfo/tomcat"/>-->
+    <property name="logback.appname" value="syncBlock"/>
+    <appender name="STD" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%date{yyyy-MM-dd HH:mm:ss} %highlight(%-5level) [%boldYellow(%thread)] %boldGreen(%logger): %msg%n</pattern>
+        </encoder>
+    </appender>
+<!--    <appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        &lt;!&ndash;日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则-->
+<!--            如果同时有<File>和<FileNamePattern>，那么当天日志是<File>，明天会自动把今天-->
+<!--            的日志改名为今天的日期。即，<File> 的日志都是当天的。-->
+<!--        &ndash;&gt;-->
+<!--        <File>${LOG_PATH}/info.${logback.appname}.log</File>-->
+<!--        &lt;!&ndash;滚动策略，按照时间滚动 TimeBasedRollingPolicy&ndash;&gt;-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            &lt;!&ndash;文件路径,定义了日志的切分方式——把每一天的日志归档到一个文件中,以防止日志填满整个磁盘空间&ndash;&gt;-->
+<!--            <FileNamePattern>${LOG_PATH}/info.${logback.appname}.%d{yyyy-MM-dd}.log</FileNamePattern>-->
+<!--            &lt;!&ndash;只保留最近90天的日志&ndash;&gt;-->
+<!--            <maxHistory>90</maxHistory>-->
+<!--            &lt;!&ndash;用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志&ndash;&gt;-->
+<!--            &lt;!&ndash;<totalSizeCap>1GB</totalSizeCap>&ndash;&gt;-->
+<!--        </rollingPolicy>-->
+<!--        &lt;!&ndash;日志输出编码格式化&ndash;&gt;-->
+<!--        <encoder>-->
+<!--            <charset>UTF-8</charset>-->
+<!--            <pattern>%d [%thread] %-5level %logger{36} %line - %msg%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+    <root level="INFO">
+        <appender-ref ref="STD"/>
+<!--        <appender-ref ref="fileInfoLog"/>-->
+    </root>
+    <logger name="com.domain.group.artifact" level="DEBUG"/>
+</configuration>
