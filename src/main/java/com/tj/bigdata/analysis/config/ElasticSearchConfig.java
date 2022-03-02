@@ -2,7 +2,6 @@ package com.tj.bigdata.analysis.config;
 
 
 import org.apache.http.HttpHost;
-import org.apache.http.nio.protocol.HttpAsyncResponseConsumer;
 import org.elasticsearch.client.HttpAsyncResponseConsumerFactory;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
@@ -27,7 +26,7 @@ public class ElasticSearchConfig {
     public RestHighLevelClient esRestClient() {
         RestHighLevelClient client = new RestHighLevelClient(
                 RestClient.builder(
-                        //new HttpHost("103.44.247.5", 28000, "http")).setPathPrefix("elasticsearch").setRequestConfigCallback(builder -> builder.setConnectTimeout(5000 * 1000).setSocketTimeout(6000 * 1000)));
+                        //new HttpHost("", , "http")).setPathPrefix("elasticsearch").setRequestConfigCallback(builder -> builder.setConnectTimeout(5000 * 1000).setSocketTimeout(6000 * 1000)));
                         new HttpHost(host, port, "http")).setRequestConfigCallback(builder -> builder.setConnectTimeout(50000 * 1000).setSocketTimeout(60000 * 1000)));
         return client;
     }
